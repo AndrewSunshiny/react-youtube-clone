@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-youtube-clone/static/css/main.eb00a9b0.css",
-    "main.js": "/react-youtube-clone/static/js/main.14834cdb.js",
+    "main.js": "/react-youtube-clone/static/js/main.5be3a926.js",
     "static/media/roboto-all-500-normal.woff": "/react-youtube-clone/static/media/roboto-all-500-normal.0ab669b7a0d19b178f57.woff",
     "static/media/roboto-all-700-normal.woff": "/react-youtube-clone/static/media/roboto-all-700-normal.a457fde362a540fcadff.woff",
     "static/media/roboto-all-400-normal.woff": "/react-youtube-clone/static/media/roboto-all-400-normal.c5d001fa922fa66a147f.woff",
@@ -36,10 +36,10 @@
     "static/media/roboto-greek-ext-700-normal.woff2": "/react-youtube-clone/static/media/roboto-greek-ext-700-normal.bd9854c751441ccc1a70.woff2",
     "index.html": "/react-youtube-clone/index.html",
     "main.eb00a9b0.css.map": "/react-youtube-clone/static/css/main.eb00a9b0.css.map",
-    "main.14834cdb.js.map": "/react-youtube-clone/static/js/main.14834cdb.js.map"
+    "main.5be3a926.js.map": "/react-youtube-clone/static/js/main.5be3a926.js.map"
   },
   "entrypoints": [
     "static/css/main.eb00a9b0.css",
-    "static/js/main.14834cdb.js"
+    "static/js/main.5be3a926.js"
   ]
 }
