@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Feed } from '~pages';
+import Sidebar from '~components/Sidebar';
 
 function App() {
   return (

@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
+    "paths": {
+      "~assets/*": [
+        "src/assets/*"
+      ],
+      "~pages/*": [
+        "src/pages/*"
+      ],
+      "~utils/*": [
+        "src/utils/*"
+      ],
+      "~redux/*": [
+        "src/redux/*"
+      ],
+      "~components/*": [
+        "src/components/*"
+      ],
+      "~/*": [
+        "src/*"
+      ]
+    }
+  }
+}
