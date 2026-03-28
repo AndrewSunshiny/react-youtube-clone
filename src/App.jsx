@@ -9,9 +9,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Feed />} />
         <Route path="/feed/:id" element={<Feed />} />
-        <Route path="/channel/:id" element={<ChannelDetails />} />
+        {/* <Route path="/channel/:id" element={<ChannelDetails />} />
         <Route path="/search/:id" element={<SearchFeed />} />
-        <Route path="/watch/:id" element={<VideoDetails />} />
+        <Route path="/watch/:id" element={<VideoDetails />} /> */}
       </Routes>
     </Router>
   );

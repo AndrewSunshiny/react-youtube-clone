@@ -15,8 +15,8 @@ export default function Feed() {
   const { sidebarExtended } = useSelector((state) => state.category);
   const pageRoute = useNavigate();
 
-  const videos = categoryVideos?.map((video) => ({
-    ...video,
+  const videosList = categoryVideos?.map((el) => ({
+    ...el,
     key: crypto.randomUUID(),
   }));
 
@@ -33,8 +33,8 @@ export default function Feed() {
       <div
         className={`pl-0 ${sidebarExtended ? 'sm:pl-[180px]' : 'sm:pl-[70px]'} flex flex-wrap gap-x-[3%] pt-20 ml-4 gap-y-6`}
       >
-        {videos?.map((el, key) => (
-          <div style={{ marginTop: '0px' }} key={key}>
+        {videosList?.map((el) => (
+          <div style={{ marginTop: '0px' }} key={el.key}>
             <VideoCard
               title={el.snippet?.title}
               thumbnail={el.snippet?.thumbnails?.medium?.url}

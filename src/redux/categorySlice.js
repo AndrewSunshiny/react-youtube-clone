@@ -30,7 +30,7 @@ const categorySlice = createSlice({
     setSelectedCategory: (state, { payload }) => {
       state.selectedCategory = payload;
     },
-    setSidebarExtended: (state, { payload }) => {
+    setSidebarExtendedValue: (state, { payload }) => {
       state.sidebarExtended = payload;
     },
   },
@@ -49,6 +49,6 @@ const categorySlice = createSlice({
 });
 
 export { getCategoryVideos };
-export const { setSelectedCategory, setSidebarExtended } =
+export const { setSelectedCategory, setSidebarExtendedValue } =
   categorySlice.actions;
 export default categorySlice.reducer;
