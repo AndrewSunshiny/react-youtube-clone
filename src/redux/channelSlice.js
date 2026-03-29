@@ -48,6 +48,17 @@ const channelSlice = createSlice({
       console.log('request rejected');
       state.isLoading = false;
     },
+    [getChannelDetails.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [getChannelDetails.fulfilled]: (state, { payload }) => {
+      state.channelVideos = payload;
+      state.isLoading = false;
+    },
+    [getChannelDetails.rejected]: (state) => {
+      console.log('request rejected');
+      state.isLoading = false;
+    },
   },
 });
 
