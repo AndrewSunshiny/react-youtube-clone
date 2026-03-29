@@ -24,7 +24,7 @@ export default function Navbar({ sidebarExtended, setSidebarExtended }) {
     e.target.value = '';
   };
   return (
-    <div className="h-[50px] fixed z-10 bg-[#ffff] w-[100%] ">
+    <div className="fixed z-10 h-[50px] w-[100%] bg-[#ffff]">
       {(isLoading || videoLoading || channelLoading || searchLoading) ?? (
         <Stack sx={{ width: '100%', color: 'grey.500' }} spacing={2}>
           <LinearProgress color="error" />
@@ -32,7 +32,7 @@ export default function Navbar({ sidebarExtended, setSidebarExtended }) {
       )}
 
       <nav className="flex h-[60px] items-center space-x-2 lg:space-x-20 xl:space-x-64">
-        <div className="flex h-[60px]  items-center space-x-2 lg:space-x-20 xl:space-x-64">
+        <div className="flex h-[60px] items-center space-x-2 lg:space-x-20 xl:space-x-64">
           <button
             onClick={() => {
               dispatch(setSidebarExtendedValue(!sidebarExtended));
@@ -46,12 +46,12 @@ export default function Navbar({ sidebarExtended, setSidebarExtended }) {
           </Link>
         </div>
         <form className="-mt-3" onSubmit={handleSubmit}>
-          <div className="relative w-[220px] sm:w-[450px] ">
+          <div className="relative w-[170px] sm:w-[420px]">
             <input
               type="search"
               name="search"
               id="default-search"
-              className="block p-2 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border-[1px] border-[#cccccc] focus:outline-none"
+              className="block w-full rounded-lg border-[1px] border-[#cccccc] bg-gray-50 p-2 pl-10 text-sm text-gray-900 focus:outline-none"
               placeholder="Search"
               required
               value={searchValue}
@@ -59,10 +59,10 @@ export default function Navbar({ sidebarExtended, setSidebarExtended }) {
             />
             <button
               type="submit"
-              className="text-white absolute right-0 bottom-0 top-0 font-medium text-sm px-4 py-2 bg-[#f8f8f8] border-[1px] border-[#cccccc]"
+              className="absolute top-0 right-0 bottom-0 border-[1px] border-[#cccccc] bg-[#f8f8f8] px-4 py-2 text-sm font-medium text-white"
             >
               <svg
-                className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                className="h-5 w-5 text-gray-500 dark:text-gray-400"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

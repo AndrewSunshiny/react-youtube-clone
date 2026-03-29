@@ -18,7 +18,7 @@ export default function Sidebar() {
   const { selectedCategory } = useSelector((state) => state.category);
 
   const categoriesList = categories.map((el) => ({
-    ...el,
+    el,
     key: crypto.randomUUID(),
   }));
 
@@ -28,8 +28,8 @@ export default function Sidebar() {
         sidebarExtended={sidebarExtended}
         setSidebarExtended={setSidebarExtended}
       />
-      <div className="absolute w-[10%] bg-[#fff] top-20 hidden sm:block">
-        <div className="flex flex-col gap-y-6 fixed">
+      <div className="absolute top-20 hidden w-[10%] bg-[#fff] sm:block">
+        <div className="fixed z-20 flex flex-col gap-y-6">
           {categoriesList.map((el) => {
             <button
               key={el.key}
@@ -41,7 +41,7 @@ export default function Sidebar() {
               }}
             >
               <div
-                className="flex items-center gap-x-4 ml-2 px-2 py-2"
+                className="ml-2 flex items-center gap-x-4 px-2 py-2"
                 style={{
                   backgroundColor:
                     selectedCategory === el.name ? '#f2f2f2' : '#fff',
@@ -59,9 +59,9 @@ export default function Sidebar() {
           })}
         </div>
       </div>
-      <div className="block sm:hidden bg-[#ffff] top-0 fixed z-10 transition ease-in-out delay-150">
+      <div className="fixed top-0 z-10 block h-[100vh] bg-[#ffff] transition delay-150 ease-in-out sm:hidden">
         <div
-          className={`${sidebarExtended ? 'flex' : 'hidden'} items-center space-x-4 ml-3 -mt-4 pl-2`}
+          className={`${sidebarExtended ? 'flex' : 'hidden'} -mt-4 ml-3 items-center space-x-4 pl-2`}
         >
           <button
             onClick={() => {
@@ -76,10 +76,10 @@ export default function Sidebar() {
           </Link>
         </div>
         <div className="flex flex-col gap-y-6">
-          {categoriesList.map((el) => {
+          {categoriesList.map(({ el, key }) => {
             sidebarExtended ?? (
               <button
-                key={el.key}
+                key={key}
                 onClick={() => {
                   sidebarExtended ?? dispatch(setSidebarExtendedValue(false));
                   el.name === 'Home'
@@ -88,7 +88,7 @@ export default function Sidebar() {
                 }}
               >
                 <div
-                  className="flex items-center gap-x-4 ml-2 px-2 py-2 "
+                  className="ml-2 flex items-center gap-x-4 px-2 py-2"
                   style={{
                     backgroundColor:
                       selectedCategory === el.name ? '#f2f2f2' : '#fff',

@@ -12,23 +12,23 @@ function Video({ videoId, thumbnail, channelId, channel, title, on }) {
   const pageRoute = useNavigate();
 
   return (
-    <div className="flex w-[90%] cursor-pointer gap-x-4">
+    <div className="cursor-pointerflex flex w-[90%] w-[98%] cursor-pointer flex-col items-center gap-x-4 sm:w-[90%] sm:flex-row sm:items-center sm:items-start">
       <img
         alt="Video Thumbnail"
         onClick={() => pageRoute(`/watch/${videoId}`)}
-        className="h-[110px] max-w-[210px] bg-cover"
+        className="w-[100%] bg-cover sm:h-[110px] sm:w-[210px]"
         src={thumbnail}
       />
       <div>
         <h3
           onClick={() => pageRoute(`/watch/${videoId}`)}
-          className="w-[100%] text-[18px] leading-[24px] font-medium tracking-wide text-[#000000]"
+          className="w-[100%] text-[15px] font-medium tracking-wide text-[#000000] sm:w-[110%] md:text-[16px] md:leading-[24px] lg:text-[18px]"
         >
           {title}
         </h3>
         <div
           onClick={() => pageRoute(`/channel/${channelId}`)}
-          className="mt-1"
+          className="sm:mt-1"
         >
           <p className="text-[13.5px] font-[500] tracking-wide text-[#606060]">
             {channel}
@@ -88,7 +88,7 @@ function VideoDetails() {
               {tagsList?.map(({ el, key }, index) => {
                 return (
                   <a
-                    style={{ display: index > 4 ? 'none' : '' }}
+                    style={{ display: index > 3 ? 'none' : '' }}
                     className="text-[13px] font-normal text-[#3366CC]"
                     href={`${el}`}
                     key={key}
@@ -134,7 +134,7 @@ function VideoDetails() {
             </div>
           </div>
         </div>
-        <div className="mt-40 flex flex-col gap-y-4 sm:mt-40 lg:mt-0">
+        <div className="mt-48 flex flex-col gap-y-4 sm:mt-40 lg:mt-0">
           {relatedVideosList?.map(({ el, key }) => {
             return (
               <Video
