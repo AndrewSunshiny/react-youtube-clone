@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSidebarExtendedValue } from '~redux/categorySlice';
-import { Stack } from '@mui/material/Stack';
-import LinearProgress from '@mui/material';
+import { Stack } from '@mui/material';
+import { LinearProgress } from '@mui/material';
 import Menu from '~assets/Menu';
 import logo from '~assets/ytLogo.png';
 
