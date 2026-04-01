@@ -35,27 +35,28 @@ const videoSlice = createSlice({
   name: 'video',
   initialState,
   reducers: {},
-  extraReducers: {
-    [getVideoDetails.pending]: (state) => {
-      state.isLoading = true;
-    },
-    [getVideoDetails.fulfilled]: (state, { payload }) => {
-      state.videoDetails = payload;
-      state.isLoading = false;
-    },
-    [getVideoDetails.rejected]: (state) => {
-      state.isLoading = false;
-    },
-    [getVideoDetails.pending]: (state) => {
-      state.isLoading = true;
-    },
-    [getVideoDetails.fulfilled]: (state, { payload }) => {
-      state.relatedVideos = payload;
-      state.isLoading = false;
-    },
-    [getVideoDetails.rejected]: (state) => {
-      state.isLoading = false;
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getVideoDetails.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getVideoDetails.fulfilled, (state, { payload }) => {
+        state.videoDetails = payload;
+        state.isLoading = false;
+      })
+      .addCase(getVideoDetails.rejected, (state) => {
+        state.isLoading = false;
+      })
+      .addCase(getRelatedVideos.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getRelatedVideos.fulfilled, (state, { payload }) => {
+        state.relatedVideos = payload;
+        state.isLoading = false;
+      })
+      .addCase(getRelatedVideos.rejected, (state) => {
+        state.isLoading = false;
+      });
   },
 });
 

@@ -12,7 +12,7 @@ function Video({ videoId, thumbnail, channelId, channel, title, on }) {
   const pageRoute = useNavigate();
 
   return (
-    <div className="cursor-pointerflex flex w-[90%] w-[98%] cursor-pointer flex-col items-center gap-x-4 sm:w-[90%] sm:flex-row sm:items-center sm:items-start">
+    <div className="flex w-[98%] cursor-pointer flex-col gap-x-4 sm:w-[90%] sm:flex-row sm:items-center sm:items-start">
       <img
         alt="Video Thumbnail"
         onClick={() => pageRoute(`/watch/${videoId}`)}
