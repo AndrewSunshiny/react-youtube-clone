@@ -8,7 +8,7 @@ const initialState = {
 };
 const BASE_URL = 'https://youtube-v31.p.rapidapi.com';
 
-const searchById = createAsyncThunk('redux/searchById', async (url) => {
+export const searchById = createAsyncThunk('redux/searchById', async (url) => {
   try {
     const data = await axios.get(`${BASE_URL}/${url}`, options);
     return data.items;
@@ -16,7 +16,8 @@ const searchById = createAsyncThunk('redux/searchById', async (url) => {
     console.error('error in searchById thunk: ', error);
   }
 });
-const searchSlice = createSlice({
+
+export const searchSlice = createSlice({
   name: 'search',
   initialState,
   reducers: {},
@@ -37,4 +38,3 @@ const searchSlice = createSlice({
 });
 
 export default searchSlice.reducer;
-export { searchById };

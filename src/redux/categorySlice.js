@@ -11,7 +11,7 @@ const initialState = {
   sidebarExtended: false,
 };
 
-const getCategoryVideos = createAsyncThunk(
+export const getCategoryVideos = createAsyncThunk(
   'redux/categorySlice',
   async (url) => {
     try {
@@ -23,7 +23,7 @@ const getCategoryVideos = createAsyncThunk(
   },
 );
 
-const categorySlice = createSlice({
+export const categorySlice = createSlice({
   name: 'category',
   initialState,
   reducers: {
@@ -49,7 +49,6 @@ const categorySlice = createSlice({
   },
 });
 
-export { getCategoryVideos };
+export default categorySlice.reducer;
 export const { setSelectedCategory, setSidebarExtendedValue } =
   categorySlice.actions;
-export default categorySlice.reducer;

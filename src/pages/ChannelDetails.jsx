@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getChannelVideos, getChannelDetail } from '~redux/channelSlice';
+import { getChannelVideos, getChannelDetails } from '~redux/channelSlice';
 import VideoCard from '~components/VideoCard';
 import convertToInternationalCurrencySystem from '~utils/convert';
 import timeSince from '~utils/date';
@@ -25,7 +25,7 @@ export default function ChannelDetails() {
       getChannelVideos(`search?channleId=${id}&part=snippet&order=date`),
     );
     dispatch(
-      getChannelDetail(`search?channleId=${id}&part=snippet&order=date`),
+      getChannelDetails(`search?channleId=${id}&part=snippet&order=date`),
     );
   }, [id, dispatch]);
 

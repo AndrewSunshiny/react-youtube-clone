@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { API_KEY } from '~utils/getSecrets';
 
 const BASE_URL = 'https://youtube-v31.p.rapidapi.com';
 
@@ -8,7 +9,7 @@ export const options = {
   },
   headers: {
     // 'X-RapidAPI-Key': process.env.REACT_APP_SECRET_KEY,
-    'X-RapidAPI-Key': import.meta.env.REACT_APP_SECRET_KEY,
+    'X-RapidAPI-Key': API_KEY,
     'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com',
   },
 };

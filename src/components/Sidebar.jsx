@@ -5,7 +5,7 @@ import {
   setSelectedCategory,
   setSidebarExtendedValue,
 } from '~redux/categorySlice';
-import { Navbar } from '~components/Navbar';
+import Navbar from '~components/Navbar';
 import categories from '~utils/categories';
 import Menu from '~assets/Menu';
 import logo from '~assets/ytLogo.png';

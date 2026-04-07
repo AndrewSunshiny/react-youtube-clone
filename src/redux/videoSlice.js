@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { options } from 'prettier-plugin-tailwindcss';
+import { options } from '~utils/Fetch';
 
 const base_url = 'https://youtube-v31.p.rapidapi.com';
 const initialState = {
@@ -9,7 +9,7 @@ const initialState = {
   relatedVideos: [],
 };
 
-const getVideoDetails = createAsyncThunk(
+export const getVideoDetails = createAsyncThunk(
   'redux/createVideoDetails',
   async (url) => {
     try {
@@ -20,7 +20,7 @@ const getVideoDetails = createAsyncThunk(
     }
   },
 );
-const getRelatedVideos = createAsyncThunk(
+export const getRelatedVideos = createAsyncThunk(
   'redux/getRelatedVideos',
   async (url) => {
     try {
@@ -31,7 +31,7 @@ const getRelatedVideos = createAsyncThunk(
     }
   },
 );
-const videoSlice = createSlice({
+export const videoSlice = createSlice({
   name: 'video',
   initialState,
   reducers: {},
@@ -61,4 +61,3 @@ const videoSlice = createSlice({
 });
 
 export default videoSlice.reducer;
-export { getVideoDetails, getRelatedVideos };

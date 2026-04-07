@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import ChannelDetails from '~pages/ChannelDetails';
 import { options } from '~utils/Fetch';
 
 const BASE_URL = 'https://youtube-v31.p.rapidapi.com';
@@ -10,7 +9,7 @@ const initialState = {
   ChannelDetails: '',
 };
 
-const getChannelVideos = createAsyncThunk(
+export const getChannelVideos = createAsyncThunk(
   'redux/getChannelVideos',
   async (url) => {
     try {
@@ -21,7 +20,8 @@ const getChannelVideos = createAsyncThunk(
     }
   },
 );
-const getChannelDetails = createAsyncThunk(
+
+export const getChannelDetails = createAsyncThunk(
   'redux/getChannelDetails',
   async (url) => {
     try {
@@ -32,7 +32,8 @@ const getChannelDetails = createAsyncThunk(
     }
   },
 );
-const channelSlice = createSlice({
+
+export const channelSlice = createSlice({
   name: 'channel',
   initialState,
   reducers: {},
@@ -63,4 +64,3 @@ const channelSlice = createSlice({
 });
 
 export default channelSlice.reducer;
-export { channelSlice, getChannelVideos, getChannelDetails };
