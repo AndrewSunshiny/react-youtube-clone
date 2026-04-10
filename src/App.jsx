@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import useGoogle from '~/hooks/useGoogle';
+// import useGoogle from '~/hooks/useGoogle';
 import Feed from '~pages/Feed';
 import ChannelDetails from '~pages/ChannelDetails';
 import SearchFeed from '~pages/SearchFeed';
@@ -7,7 +7,7 @@ import VideoDetails from '~pages/VideoDetails';
 import Sidebar from '~components/Sidebar';
 
 function App() {
-  useGoogle();
+  // useGoogle();
 
   return (
     <Router>
